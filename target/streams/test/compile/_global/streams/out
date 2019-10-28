@@ -1,0 +1,7 @@
+[0m[[0m[31merror[0m] [0m[0mC:\Users\joice.cardoso\Desktop\Scala\scala-project\src\test\scala\SentenceListSpec.scala:2:8: object SentenceList is not a member of package wordCount[0m
+[0m[[0m[31merror[0m] [0m[0mimport wordCount.SentenceList[0m
+[0m[[0m[31merror[0m] [0m[0m       ^[0m
+[0m[[0m[31merror[0m] [0m[0mC:\Users\joice.cardoso\Desktop\Scala\scala-project\src\test\scala\SentenceListSpec.scala:10:16: not found: value SentenceList[0m
+[0m[[0m[31merror[0m] [0m[0m        assert(SentenceList.get(1) == "apples")[0m
+[0m[[0m[31merror[0m] [0m[0m               ^[0m
+[0m[[0m[31merror[0m] [0m[0mtwo errors found[0m

@@ -1,0 +1,29 @@
+compile
+run
+~compile
+run
+compile
+run
+scalaVersion
+set ThisBuild / scalaVersion := 2.12.10
+set ThisBuild / scalaVersion := "2.12.10"
+session save
+reload
+test
+run
+test
+compile
+test
+compile
+test
+compile
+test
+compile
+test
+console
+reload
+console
+compile
+test
+run
+test
