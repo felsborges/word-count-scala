@@ -1,7 +1,4 @@
-[0m[[0m[31merror[0m] [0m[0mC:\Users\joice.cardoso\Desktop\Scala\scala-project\src\test\scala\SentenceListSpec.scala:2:8: object SentenceList is not a member of package wordCount[0m
-[0m[[0m[31merror[0m] [0m[0mimport wordCount.SentenceList[0m
-[0m[[0m[31merror[0m] [0m[0m       ^[0m
-[0m[[0m[31merror[0m] [0m[0mC:\Users\joice.cardoso\Desktop\Scala\scala-project\src\test\scala\SentenceListSpec.scala:10:16: not found: value SentenceList[0m
-[0m[[0m[31merror[0m] [0m[0m        assert(SentenceList.get(1) == "apples")[0m
-[0m[[0m[31merror[0m] [0m[0m               ^[0m
-[0m[[0m[31merror[0m] [0m[0mtwo errors found[0m
+[0m[[0m[33mwarn[0m] [0m[0mC:\Users\joice.cardoso\Desktop\Scala\scala-project\src\test\scala\SentenceListSpec.scala:25:15: comparing values of types Unit and List[List[String]] using `==' will always yield false[0m
+[0m[[0m[33mwarn[0m] [0m[0m        assert(sentence.sentences() == List(List("O", "dinheiro", "faz", "homens", "ricos", "o", "conhecimento", "faz", "homens", "s├íbios", "e", "a", "humildade", "faz", "grandes", "homens"), List("Bons", "amigos", "s├úo", "como", "estrelas", "nem", "sempre", "podemos", "ver", "mas", "temos", "certeza", "que", "est├úo", "sempre", "l├í"), List("Viva", "simples", "sonhe", "grande", "seja", "grato", "d├¬", "amor", "ria", "muito"), List("Se", "for", "pra", "desistir", "desista", "de", "ser", "fraco")))[0m
+[0m[[0m[33mwarn[0m] [0m[0m              ^[0m
+[0m[[0m[33mwarn[0m] [0m[0mone warning found[0m

@@ -1,5 +1,7 @@
-[0m[[0m[31merror[0m] [0m[0mC:\Users\joice.cardoso\Desktop\Scala\scala-project\src\main\scala\wordCount\SentenceList.scala:6:24: not enough arguments for constructor SentenceList: (doc: String)wordCount.SentenceList.[0m
-[0m[[0m[31merror[0m] [0m[0mUnspecified value parameter doc.[0m
-[0m[[0m[31merror[0m] [0m[0m        val sentence = new SentenceList[0m
-[0m[[0m[31merror[0m] [0m[0m                       ^[0m
-[0m[[0m[31merror[0m] [0m[0mone error found[0m
+[0m[[0m[31merror[0m] [0m[0mC:\Users\joice.cardoso\Desktop\Scala\scala-project\src\main\scala\wordCount\SentenceList.scala:30:39: value removeAll is not a member of List[List[String]][0m
+[0m[[0m[31merror[0m] [0m[0m        val clearList = parsedListNew.removeAll(Arrays.asList("", null))[0m
+[0m[[0m[31merror[0m] [0m[0m                                      ^[0m
+[0m[[0m[31merror[0m] [0m[0mC:\Users\joice.cardoso\Desktop\Scala\scala-project\src\main\scala\wordCount\SentenceList.scala:30:49: not found: value Arrays[0m
+[0m[[0m[31merror[0m] [0m[0m        val clearList = parsedListNew.removeAll(Arrays.asList("", null))[0m
+[0m[[0m[31merror[0m] [0m[0m                                                ^[0m
+[0m[[0m[31merror[0m] [0m[0mtwo errors found[0m
