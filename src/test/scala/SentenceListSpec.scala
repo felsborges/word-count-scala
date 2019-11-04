@@ -11,18 +11,59 @@ class SentenceListSpec extends FunSuite with DiagrammedAssertions {
     test("Dado um inteiro Deve retornar uma sentença") {
         
         val sentence = new SentenceList(modeloTeste)
-        assert(sentence.get(0) == "O dinheiro faz homens ricos, o conhecimento faz homens sábios e a humildade faz grandes homens.")    
+        assert(sentence.get(0) == "O dinheiro faz homens ricos, o conhecimento faz homens sábios e a humildade faz grandes homens.")   
     }
 
     test("Dado um inteiro maior que 0 Deve retornar uma sentença") {
         
         val sentence = new SentenceList(modeloTeste)
-        assert(sentence.get(1) == "Bons amigos são como estrelas: nem sempre podemos ver, mas temos certeza que estão sempre lá.")    
+        assert(sentence.get(1) == "Bons amigos são como estrelas: nem sempre podemos ver, mas temos certeza que estão sempre lá.") 
     }
 
     test("Dado um dicionario Deve retornar a lista de palavras das sentenças") {
+        // val modeloTesteSimple = """[{"text" : "Hello world"},
+        //                             {"text" : "Hello world 2"}]"""
+
+        // val sentence = new SentenceList(modeloTesteSimple)
+
+        // assert(sentence.sentences() == List(List("Hello", "world"), List("Hello", "world", "2")))
+
+        // val modeloTesteSimple = """[{"text" : "O dinheiro faz homens ricos, o conhecimento faz homens sábios e a humildade faz grandes homens."},
+        //                             {"text" : "Bons amigos são como estrelas: nem sempre podemos ver, mas temos certeza que estão sempre lá."},
+        //                             {"text" : "Viva simples, sonhe grande, seja grato, dê amor, ria muito!"},
+        //                             {"text" : "Se for pra desistir, desista de ser fraco."}]"""
+
+        // val sentence = new SentenceList(modeloTesteSimple)
+
+        // assert(sentence.sentences() == List(List("O", "dinheiro", "faz", "homens", "ricos,", "o", "conhecimento", "faz", "homens", "sábios", "e", "a", "humildade", "faz", "grandes", "homens."),
+        //                                     List("Bons", "amigos", "são", "como", "estrelas:", "nem", "sempre", "podemos", "ver,", "mas", "temos", "certeza", "que", "estão", "sempre", "lá."),
+        //                                     List("Viva", "simples,", "sonhe", "grande,", "seja", "grato,", "dê", "amor,", "ria", "muito!"),
+        //                                     List("Se", "for", "pra", "desistir,", "desista", "de", "ser", "fraco.")))
+
         val sentence = new SentenceList(modeloTeste)
-        assert(sentence.sentences() == List(List("O", "dinheiro", "faz", "homens", "ricos", "o", "conhecimento", "faz", "homens", "s├íbios", "e", "a", "humildade", "faz", "grandes", "homens"), List("Bons", "amigos", "s├úo", "como", "estrelas", "nem", "sempre", "podemos", "ver", "mas", "temos", "certeza", "que", "est├úo", "sempre", "l├í"), List("Viva", "simples", "sonhe", "grande", "seja", "grato", "d├¬", "amor", "ria", "muito"), List("Se", "for", "pra", "desistir", "desista", "de", "ser", "fraco")))
+        // assert(sentence.sentences() == List(List("O", "dinheiro", "faz", "homens", "ricos,", "o", "conhecimento", "faz", "homens", "sábios", "e", "a", "humildade", "faz", "grandes", "homens."),
+        //                                     List("Bons", "amigos", "são", "como", "estrelas:", "nem", "sempre", "podemos", "ver,", "mas", "temos", "certeza", "que", "estão", "sempre", "lá."),
+        //                                     List("Viva", "simples,", "sonhe", "grande,", "seja", "grato,", "dê", "amor,", "ria", "muito!"),
+        //                                     List("Se", "for", "pra", "desistir,", "desista", "de", "ser", "fraco.")))
+
+        assert(sentence.sentences() == List(List("O", "dinheiro", "faz", "homens", "ricos", "o", "conhecimento", "faz", "homens", "sábios", "e", "a", "humildade", "faz", "grandes", "homens"),
+                                            List("Bons", "amigos", "são", "como", "estrelas", "nem", "sempre", "podemos", "ver", "mas", "temos", "certeza", "que", "estão", "sempre", "lá"),
+                                            List("Viva", "simples", "sonhe", "grande", "seja", "grato", "dê", "amor", "ria", "muito"),
+                                            List("Se", "for", "pra", "desistir", "desista", "de", "ser", "fraco")))
+    }
+
+    test("Dado uma palavra buscar a frequência que está aparece em um determinado dicionário") {
+        // val modeloTesteSimples = """[{"text" : "Hello world"},
+        //                             {"text" : "Hello world 2"}]"""
+
+        // val sentence = new SentenceList(modeloTesteSimples)
+        // val w  = "Hello"
+
+        // assert(sentence.freq(w) == 2)
+
+        val sentence = new SentenceList(modeloTeste)
+        val w = "homens"
+        assert(sentence.freq(w) == 3)
     }
 
 }

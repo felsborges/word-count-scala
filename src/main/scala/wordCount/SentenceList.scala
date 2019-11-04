@@ -3,10 +3,12 @@ import play.api.libs.json._
 
 object Main {
     def main(args: Array[String]) {
-        val modeloTeste = """[{"id": 0, "language": "pt", "text": "O dinheiro faz homens ricos, o conhecimento faz homens sábios e a humildade faz grandes homens."},
-                          {"id": 1, "language": "pt", "text": "Bons amigos são como estrelas: nem sempre podemos ver, mas temos certeza que estão sempre lá."},
-                          {"id": 2, "language": "pt", "text": "Viva simples, sonhe grande, seja grato, dê amor, ria muito!"},
-                          {"id": 3, "language": "pt", "text": "Se for pra desistir, desista de ser fraco."}]"""
+        // val modeloTeste = """[{"id": 0, "language": "pt", "text": "O dinheiro faz homens ricos, o conhecimento faz homens sábios e a humildade faz grandes homens."},
+        //                   {"id": 1, "language": "pt", "text": "Bons amigos são como estrelas: nem sempre podemos ver, mas temos certeza que estão sempre lá."},
+        //                   {"id": 2, "language": "pt", "text": "Viva simples, sonhe grande, seja grato, dê amor, ria muito!"},
+        //                   {"id": 3, "language": "pt", "text": "Se for pra desistir, desista de ser fraco."}]"""
+
+        val modeloTeste = """[{"text" : "Hello world"}]"""
 
         val sentence = new SentenceList(modeloTeste)
 
@@ -18,7 +20,7 @@ object Main {
 }
 
 class SentenceList (doc:String) {
-    val docList = doc
+    private val docList = doc
 
     //Lista de listas de palavras
     def sentences() = {
@@ -26,9 +28,12 @@ class SentenceList (doc:String) {
         val parsed = Json.parse(listTest)
         val parsedList = (parsed \\ "text").toList
         //val parsedListNew = parsedList.map(x => x.toString.split("\\s+").map(_.trim).toList)
-        val parsedListNew = parsedList.map(x => x.toString.replaceAll("\\P{L}", " ").trim.split("\\s+").toList)
-        val clearList = parsedListNew
-        println(clearList)
+        // val parsedListNew = parsedList.map(x => x.toString.replaceAll("\\P{L}", " ").trim.split("\\s+").toList)
+        // val clearList = parsedListNew
+        // println(clearList)
+        // parsedListNew
+        // parsedList.map(x => x.toString.replaceAll("\"", "").split(" ").toList)
+        parsedList.map(x => x.toString.replaceAll("[,.?!\":]", "").split(" ").toList)
     }
     
     //e-nesima sentença
@@ -36,9 +41,16 @@ class SentenceList (doc:String) {
         val listTest = this.docList
         val parsed = Json.parse(listTest)
         (parsed \ n \ "text").as[String]
-        }
+    }
+
     //número total de ocorrências de W
-    def freq(w: String) = println("freq (1)")
+    def freq(w: String) = {
+        var frequencia = 0
+        
+        this.sentences.map(x => x.map(y => if (y == w) frequencia = frequencia + 1))
+
+        frequencia
+    }
     //número de ocorrências de w na sentença
     def freq(w: String, s: Int) = println("freq (2)")
 
