@@ -21,30 +21,8 @@ class SentenceListSpec extends FunSuite with DiagrammedAssertions {
     }
 
     test("Dado um dicionario Deve retornar a lista de palavras das sentenças") {
-        // val modeloTesteSimple = """[{"text" : "Hello world"},
-        //                             {"text" : "Hello world 2"}]"""
-
-        // val sentence = new SentenceList(modeloTesteSimple)
-
-        // assert(sentence.sentences() == List(List("Hello", "world"), List("Hello", "world", "2")))
-
-        // val modeloTesteSimple = """[{"text" : "O dinheiro faz homens ricos, o conhecimento faz homens sábios e a humildade faz grandes homens."},
-        //                             {"text" : "Bons amigos são como estrelas: nem sempre podemos ver, mas temos certeza que estão sempre lá."},
-        //                             {"text" : "Viva simples, sonhe grande, seja grato, dê amor, ria muito!"},
-        //                             {"text" : "Se for pra desistir, desista de ser fraco."}]"""
-
-        // val sentence = new SentenceList(modeloTesteSimple)
-
-        // assert(sentence.sentences() == List(List("O", "dinheiro", "faz", "homens", "ricos,", "o", "conhecimento", "faz", "homens", "sábios", "e", "a", "humildade", "faz", "grandes", "homens."),
-        //                                     List("Bons", "amigos", "são", "como", "estrelas:", "nem", "sempre", "podemos", "ver,", "mas", "temos", "certeza", "que", "estão", "sempre", "lá."),
-        //                                     List("Viva", "simples,", "sonhe", "grande,", "seja", "grato,", "dê", "amor,", "ria", "muito!"),
-        //                                     List("Se", "for", "pra", "desistir,", "desista", "de", "ser", "fraco.")))
 
         val sentence = new SentenceList(modeloTeste)
-        // assert(sentence.sentences() == List(List("O", "dinheiro", "faz", "homens", "ricos,", "o", "conhecimento", "faz", "homens", "sábios", "e", "a", "humildade", "faz", "grandes", "homens."),
-        //                                     List("Bons", "amigos", "são", "como", "estrelas:", "nem", "sempre", "podemos", "ver,", "mas", "temos", "certeza", "que", "estão", "sempre", "lá."),
-        //                                     List("Viva", "simples,", "sonhe", "grande,", "seja", "grato,", "dê", "amor,", "ria", "muito!"),
-        //                                     List("Se", "for", "pra", "desistir,", "desista", "de", "ser", "fraco.")))
 
         assert(sentence.sentences() == List(List("O", "dinheiro", "faz", "homens", "ricos", "o", "conhecimento", "faz", "homens", "sábios", "e", "a", "humildade", "faz", "grandes", "homens"),
                                             List("Bons", "amigos", "são", "como", "estrelas", "nem", "sempre", "podemos", "ver", "mas", "temos", "certeza", "que", "estão", "sempre", "lá"),
@@ -53,17 +31,29 @@ class SentenceListSpec extends FunSuite with DiagrammedAssertions {
     }
 
     test("Dado uma palavra buscar a frequência que está aparece em um determinado dicionário") {
-        // val modeloTesteSimples = """[{"text" : "Hello world"},
-        //                             {"text" : "Hello world 2"}]"""
-
-        // val sentence = new SentenceList(modeloTesteSimples)
-        // val w  = "Hello"
-
-        // assert(sentence.freq(w) == 2)
 
         val sentence = new SentenceList(modeloTeste)
         val w = "homens"
         assert(sentence.freq(w) == 3)
+    }
+
+    test("Dado uma palavra e o número de uma sentença deve retornar a frequencia da palavra na sentença") {
+
+        val sentence = new SentenceList(modeloTeste)
+
+        val w = "homens"
+        val s = 0
+
+        assert(sentence.freq(w, s) == 3)
+    }
+
+    test("Dado o número de uma sentença deve retornar uma lista de palavras") {
+        val s = 3
+
+        val sentence = new SentenceList(modeloTeste)
+
+        assert(sentence.sentences(s) == List("Se", "for", "pra", "desistir", "desista", "de", "ser", "fraco"))
+
     }
 
 }
